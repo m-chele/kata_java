@@ -49,6 +49,18 @@ public class SupermarketTest extends TestCase
         assertCheckoutTotalIs(130);
     }
 
+    public void test_4_A_is_180() throws Exception
+    {
+        checkout.scan("AAAA");
+        assertCheckoutTotalIs(180);
+    }
+
+    public void test_6_A_is_260() throws Exception
+    {
+        checkout.scan("AAAAAA");
+        assertCheckoutTotalIs(260);
+    }
+
     private void assertCheckoutTotalIs(int expectedTotal)
     {
         assertEquals(expectedTotal, checkout.getTotalPrice());
